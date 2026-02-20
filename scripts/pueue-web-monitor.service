@@ -1,0 +1,18 @@
+# This is a reference template.
+# Use `scripts/install-service.sh` to auto-generate with correct paths.
+
+[Unit]
+Description=PC Monitor Web App
+After=network.target
+
+[Service]
+Type=simple
+User=your-username
+WorkingDirectory=/path/to/pueue-web-monitor
+ExecStart=/usr/bin/node server/index.js
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=-/path/to/pueue-web-monitor/.env
+
+[Install]
+WantedBy=multi-user.target
